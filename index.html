@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/theme/black.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>TypeScript</h1>
+        </section>
+        <section>
+          <section>
+            <h3>Hello</h3>
+            <p>My name is <b>Denis Minzakirau</b></p>
+            <p>
+              <img
+                class="avatar"
+                width="350"
+                data-src="./assets/den.jpg"
+                alt="Den"
+              />
+            </p>
+            <p>
+              <span style="display: inline-block;" class="fragment fade-up"
+                >Novice Front-End Developer
+              </span>
+            </p>
+          </section>
+          <section>
+            <img data-src="./assets/9t9lvmkomk56v41_-tso6mohnb0.png" alt="JS" />
+          </section>
+          <section>
+            <h3>JavaScript Dialects</h3>
+            <img data-src="./assets/dialects .jpg" alt="dialects" />
+          </section>
+          <section>
+            <h2>Example - CoffeeScript</h2>
+            <pre><code class="hljs">
+class Human
+	constructor : (@name) ->
+class Baby extends Human
+	say : (msg) -> alert "#{@name} говорит '#{msg}'"
+	saymsg = (msg) -> alert msg
+	@echo = (msg) -> console.log msg
+matt = new Baby("Матвей")
+matt.sayHi()
+                </code></pre>
+          </section>
+          <section>
+            <h2>Example - ClojureScript</h2>
+            <pre><code class="hljs">
+(ns hello-world.core
+	(:require [cljs.nodejs :as nodejs]))
+(nodejs/enable-util-print!)
+(defn -main [& args]
+	(println "Hello world!"))
+(set! *main-cli-fn* -main)
+                </code></pre>
+		  </section>
+		  <section>
+            <h2>Example - Elm</h2>
+            <pre><code class="hljs">
+import Html exposing (text)
+main =
+	text (toString (zip ["Tom", "Sue", "Bob"] [45, 31, 26]))
+zip : List a -> List b -> List (a,b)
+zip xs ys =
+	case (xs, ys) of
+		( x :: xBack, y :: yBack ) ->
+			(x,y) :: zip xBack yBack
+		(_, _) ->
+			[]
+                </code></pre>
+		  </section>
+		  <section>
+            <h2>Example - TypeScript</h2>
+            <pre><code class="hljs">
+interface Person {
+	name: string;
+	age: number;
+}
+function meet(person: Person) {
+	return `Привет, я ${person.name}, мне ${parson.age}`;
+}
+const user = { name: "Jane", age: 21 };
+console.log(meet(user));
+                </code></pre>
+          </section>
+          <section>
+            <p>2015-2019</p>
+            <p>The language popularity rating according to GitHub</p>
+            <img data-src="./assets/rait.PNG" alt="rating" />
+          </section>
+        </section>
+        <section>
+          <section>
+            <img src="./assets/typescript.png" alt="typescript">
+          </section>
+          <section>
+            <h2>Advantages Of TypeScript
+            </h2>
+            <ul>
+              <li class="fragment">Compiling</li>
+              <li class="fragment">Optional static typing</li>
+              <li class="fragment">Intellisense</li>
+              <li class="fragment">Any JavaScript code will be executed in TypeScript</li>
+            </ul>
+          </section>
+          <section>
+            <h2>HOW DO WE USE IT?</h2>
+            <ul>
+              <li class="fragment">Install typescript compiler</li>
+              <li class="fragment">Rename files .js => .ts</li>
+              <li class="fragment">Magic ???</li>
+              <li class="fragment">Fix compiler errors</li>
+              <li class="fragment">Start using ES2015/ES2016/ES2017... features & adding type annotations</li>
+              <li class="fragment">PROFIT</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>A little bit about the types of variables</h2>
+          </section>
+          <section>
+            <ul>
+              <li class="fragment">Boolean value true or false</li>
+              <li class="fragment">Number: numeric value <pre><code>1</code></pre></li>
+              <li class="fragment">String <pre><code>'1'</code></pre></li>
+              <li class="fragment">Array <pre><code>[1,2,3]</code></pre></li>
+              <li class="fragment">Tuple <pre><code>["Den", 28]</code></li>
+            </ul>
+          </section>
+          <section>
+            <ul>
+              <li class="fragment">Enum: enumerations <pre><code>enum Season { Winter, Spring, Summer, Autumn };</code></li>
+              <li class="fragment">Any: any type</li>
+              <li class="fragment">Null and Undefined</li>
+              <li class="fragment">Void</li>
+              <li class="fragment">Never</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>A bit about Interfaces</h2>
+            <ul>
+              <ol class="fragment"> <pre><code class="interface">
+interface IUser {
+  id: number;
+  name: string;
+}
+              </code></pre></ol>
+              <ol class="fragment"> <pre><code class="interface">
+let employee: IUser = {
+  id: 1, 
+  name: "Tom"
+}
+</code></pre></ol>
+            </ul>
+          </section>
+          <section>
+            <h2>a bit about access modifiers</h2>
+            <ul>
+            <ol class="fragment"> <pre><code class="interface">
+class IUser {
+  public id: number;
+  private _name: string;
+  protected age: number;
+}
+</code></pre></ol></ul>
+          </section>
+        </section>
+        <section>
+            <h3>And many more interesting and useful things, for example:</h3>
+            <ul>
+              <li class="fragment">Declarative files</li>
+              <li class="fragment">Decorators </li>
+              <li class="fragment">and so on... </li>
+            </ul>
+        </section>
+        <section>
+          <h3>For more information, see the official documentation 
+            </h3>
+            <a href="https://www.typescriptlang.org/docs/home.html">THERE</a>
+            <p>last version
+              3.9.3 (may 19, 2020)</p>
+        </section>
+      </div>
+    </div>
+
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        hash: true,
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/highlight/highlight.js" },
+          { src: "plugin/notes/notes.js", async: true },
+        ],
+      });
+    </script>
+  </body>
+</html>
